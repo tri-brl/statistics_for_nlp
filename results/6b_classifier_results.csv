@@ -1,0 +1,7 @@
+model,accuracy,macro_f1
+acoustic,0.6223,0.4243
+whisper_L2,0.858,0.827
+whisper_L5,0.8138,0.7936
+xlsr_L3,0.7363,0.6795
+xlsr_L12,0.7959,0.7748
+xlsr_L21,0.2293,0.1997

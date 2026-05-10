@@ -1,0 +1,6 @@
+model,mantel_r,p_value,n_phonemes
+whisper_L2,0.6155,0.001,10
+whisper_L5,0.4564,0.013,10
+xlsr_L3,0.7498,0.001,10
+xlsr_L12,0.4796,0.006,10
+xlsr_L21,0.0816,0.32,10

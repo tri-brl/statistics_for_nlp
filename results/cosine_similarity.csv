@@ -1,0 +1,6 @@
+model,within_phoneme_sim,between_phoneme_sim,ratio
+whisper_L2,0.8664,0.822,1.0541
+whisper_L5,0.5755,0.3706,1.5531
+xlsr_L3,0.6996,0.5416,1.2916
+xlsr_L12,0.6982,0.5587,1.2497
+xlsr_L21,0.9997,0.9997,1.0

@@ -1,0 +1,21 @@
+pair,mantel_r,p_value
+euclidean vs whisper_L2,0.6155,0.001
+mahalanobis vs whisper_L2,0.6418,0.001
+euclidean vs whisper_L5,0.4564,0.013
+mahalanobis vs whisper_L5,0.496,0.007
+euclidean vs xlsr_L3,0.7498,0.001
+mahalanobis vs xlsr_L3,0.7858,0.001
+euclidean vs xlsr_L12,0.4796,0.006
+mahalanobis vs xlsr_L12,0.5191,0.004
+euclidean vs xlsr_L21,0.0816,0.32
+mahalanobis vs xlsr_L21,0.0946,0.29
+whisper_L2 vs whisper_L5,0.7962,0.001
+whisper_L2 vs xlsr_L3,0.8859,0.001
+whisper_L2 vs xlsr_L12,0.8725,0.001
+whisper_L2 vs xlsr_L21,0.2938,0.044
+whisper_L5 vs xlsr_L3,0.69,0.001
+whisper_L5 vs xlsr_L12,0.8086,0.001
+whisper_L5 vs xlsr_L21,0.2609,0.081
+xlsr_L3 vs xlsr_L12,0.8689,0.001
+xlsr_L3 vs xlsr_L21,0.2532,0.059
+xlsr_L12 vs xlsr_L21,0.3271,0.039

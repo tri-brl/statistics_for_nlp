@@ -1,0 +1,16 @@
+model1,model2,b,c,chi2,p_value,sig
+acoustic,whisper_L2,555,2505,1241.3729,0.0,True
+acoustic,whisper_L5,860,2444,758.441,0.0,True
+acoustic,xlsr_L3,1147,2090,274.1316,0.0,True
+acoustic,xlsr_L12,904,2340,634.7796,0.0,True
+acoustic,xlsr_L21,3854,603,2369.8676,0.0,True
+whisper_L2,whisper_L5,722,356,123.5853,0.0,True
+whisper_L2,xlsr_L3,1149,142,783.9163,0.0,True
+whisper_L2,xlsr_L12,731,217,277.6044,0.0,True
+whisper_L2,xlsr_L21,5268,66,5071.3163,0.0,True
+whisper_L5,xlsr_L3,1192,551,234.9971,0.0,True
+whisper_L5,xlsr_L12,616,468,19.9345,0.0,True
+whisper_L5,xlsr_L21,4973,137,4574.7994,0.0,True
+xlsr_L3,xlsr_L12,244,737,246.7523,0.0,True
+xlsr_L3,xlsr_L21,4392,197,3832.9998,0.0,True
+xlsr_L12,xlsr_L21,4787,99,4496.105,0.0,True
