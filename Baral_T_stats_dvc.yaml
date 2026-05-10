@@ -1,0 +1,95 @@
+stages:
+  parse_corpus:
+    cmd: python Baral_T_stats_p1.py
+    deps:
+      - Baral_T_stats_p1.py
+      - C:\Users\aviba\Downloads\ru-fr_interference\ru-fr_interference\2\wav_et_textgrids\FRcorp_textgrids_only
+      - C:\Users\aviba\Downloads\ru-fr_interference\ru-fr_interference\2\metadata_RUFR.csv
+      - C:\Users\aviba\Downloads\ru-fr_interference\ru-fr_interference\2\RUFRcorr.csv
+    outs:
+      - C:\Users\aviba\data\phonemes.csv
+
+  extract_acoustics:
+    cmd: python Baral_T_stats_p2.py
+    deps:
+      - Baral_T_stats_p2.py
+      - C:\Users\aviba\data\phonemes.csv
+      - C:\Users\aviba\Downloads\ru-fr_interference\ru-fr_interference\2\wav_et_textgrids\FRcorp_textgrids_only
+    outs:
+      - C:\Users\aviba\data\features_acoustic.csv
+
+  extract_whisper:
+    cmd: python Baral_T_stats_p3.py
+    deps:
+      - Baral_T_stats_p3.py
+      - C:\Users\aviba\data\features_acoustic.csv
+      - C:\Users\aviba\Downloads\ru-fr_interference\ru-fr_interference\2\wav_et_textgrids\FRcorp_textgrids_only
+    outs:
+      - C:\Users\aviba\data\features_whisper_L2.npz
+      - C:\Users\aviba\data\features_whisper_L5.npz
+      - C:\Users\aviba\data\features_whisper_log.csv
+
+  extract_xlsr:
+    cmd: python Baral_T_stats_p4.py
+    deps:
+      - Baral_T_stats_p4.py
+      - C:\Users\aviba\data\features_acoustic.csv
+      - C:\Users\aviba\Downloads\ru-fr_interference\ru-fr_interference\2\wav_et_textgrids\FRcorp_textgrids_only
+    outs:
+      - C:\Users\aviba\data\features_xlsr_L3.npz
+      - C:\Users\aviba\data\features_xlsr_L12.npz
+      - C:\Users\aviba\data\features_xlsr_L21.npz
+      - C:\Users\aviba\data\features_xlsr_log.csv
+
+  normalise:
+    cmd: python Baral_T_stats_p5.py
+    deps:
+      - Baral_T_stats_p5.py
+      - C:\Users\aviba\data\features_acoustic.csv
+      - C:\Users\aviba\data\features_whisper_L2.npz
+      - C:\Users\aviba\data\features_whisper_L5.npz
+      - C:\Users\aviba\data\features_xlsr_L3.npz
+      - C:\Users\aviba\data\features_xlsr_L12.npz
+      - C:\Users\aviba\data\features_xlsr_L21.npz
+    outs:
+      - C:\Users\aviba\data\features_acoustic_norm.csv
+      - C:\Users\aviba\data\features_whisper_L2_pca.npz
+      - C:\Users\aviba\data\features_whisper_L5_pca.npz
+      - C:\Users\aviba\data\features_xlsr_L3_pca.npz
+      - C:\Users\aviba\data\features_xlsr_L12_pca.npz
+      - C:\Users\aviba\data\features_xlsr_L21_pca.npz
+      - C:\Users\aviba\data\features_whisper_L2_umap.npz
+      - C:\Users\aviba\data\features_whisper_L5_umap.npz
+      - C:\Users\aviba\data\features_xlsr_L3_umap.npz
+      - C:\Users\aviba\data\features_xlsr_L12_umap.npz
+      - C:\Users\aviba\data\features_xlsr_L21_umap.npz
+      - C:\Users\aviba\data\pca_models.pkl
+
+  analyse:
+    cmd: >
+      python Baral_T_stats_p6a.py &&
+      python Baral_T_stats_p6b.py &&
+      python Baral_T_stats_p6c.py &&
+      python Baral_T_stats_p6d.py &&
+      python Baral_T_stats_p6e.py &&
+      python Baral_T_stats_p6f.py
+    deps:
+      - Baral_T_stats_p6a.py
+      - Baral_T_stats_p6b.py
+      - Baral_T_stats_p6c.py
+      - Baral_T_stats_p6d.py
+      - Baral_T_stats_p6e.py
+      - Baral_T_stats_p6f.py
+      - C:\Users\aviba\data\features_acoustic_norm.csv
+      - C:\Users\aviba\data\features_whisper_L2.npz
+      - C:\Users\aviba\data\features_whisper_L5.npz
+      - C:\Users\aviba\data\features_xlsr_L3.npz
+      - C:\Users\aviba\data\features_xlsr_L12.npz
+      - C:\Users\aviba\data\features_xlsr_L21.npz
+      - C:\Users\aviba\data\features_whisper_L2_pca.npz
+      - C:\Users\aviba\data\features_whisper_L5_pca.npz
+      - C:\Users\aviba\data\features_xlsr_L3_pca.npz
+      - C:\Users\aviba\data\features_xlsr_L12_pca.npz
+      - C:\Users\aviba\data\features_xlsr_L21_pca.npz
+    outs:
+      - C:\Users\aviba\results
